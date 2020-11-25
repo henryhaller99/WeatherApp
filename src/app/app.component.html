@@ -1,0 +1,25 @@
+<div class="content" role="main">
+  <div class="row">
+    <div class="card card-body">
+      <img width="100" alt="Clima" src="./assets/icono-clima.png" class="mx-auto">
+        <form (submit)="submitLocation(cityName, countryCode)">
+          <div class="formgroup">
+            <label>Ciudad:</label>
+            <input type="text" placeholder="Nombre de la ciudad" class="form-control" autofocus #cityName>
+          </div>
+          <div class="formgroup">
+            <label>Pais: </label>
+            <input type="text" placeholder="Pais" class="form-control" #countryCode>
+          </div>
+          <button class="btn btn-primary btn-block mt-2">
+            Obtener Clima 
+          </button>
+        </form>
+      </div>
+    </div>
+  <div *ngIf="weather" class="card card-body">
+    <label> <h3>Temperatura : {{weather.main.temp}}</h3></label>
+    <label><h3>Maxima: {{weather.main.temp_max}}</h3></label>
+    <label><h3>Minima: {{weather.main.temp_min}}</h3></label>
+  </div>
+</div>
